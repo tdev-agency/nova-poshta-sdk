@@ -1,0 +1,35 @@
+{
+    "name": "tdev-agency/nova-poshta-sdk",
+    "description": "Laravel package for Nova Poshta API v 2.0 (json only)",
+    "type": "library",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "TDev Agency",
+            "email": "contact@tdev.agency"
+        }
+    ],
+    "require": {
+        "ext-json": "*",
+        "ext-curl": "*",
+        "guzzlehttp/guzzle": "^7.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "TDevAgency\\NovaPoshtaSdk\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "TDevAgency\\NovaPoshtaSdk\\NovaPoshtaSdkServiceProvider"
+            ]
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packagist.xyz/"
+        }
+    ]
+}
