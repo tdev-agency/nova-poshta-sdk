@@ -8,7 +8,7 @@ use TDevAgency\NovaPoshtaSdk\Api\AddressGeneral;
 use TDevAgency\NovaPoshtaSdk\Api\Common;
 use TDevAgency\NovaPoshtaSdk\Api\Counterparty;
 use TDevAgency\NovaPoshtaSdk\Api\InternetDocument;
-use TDevAgency\NovaPoshtaSdk\managers\NovaPoshtaManager;
+use TDevAgency\NovaPoshtaSdk\Managers\NovaPoshtaManager;
 
 /**
  * Class NovaPoshta
