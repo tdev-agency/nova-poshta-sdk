@@ -13,14 +13,23 @@ class Address
 
     protected $model = 'Address';
 
-
     /**
+     * @param array $methodProperties = [
+     *     'Ref' => string,
+     *     'Page' => int,
+     *     'FindByString' => string
+     * ]
      * @return Collection
      * @throws GuzzleException
      */
-    public function getCities()
+    public function getCities($methodProperties = [])
     {
-        $cities = $this->request(['calledMethod' => 'getCities']);
+        $request = ['calledMethod' => 'getCities'];
+        if (!empty($methodProperties)) {
+            $request = array_merge($request, compact('methodProperties'));
+        }
+
+        $cities = $this->request($request);
         return Collection::make($cities['data']);
     }
 
