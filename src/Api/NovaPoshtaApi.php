@@ -48,6 +48,8 @@ trait NovaPoshtaApi
         $data = json_decode($request->getBody()->getContents(), true);
         if ($data['success']) {
             return $data;
+        }elseif (in_array(20000900746, $data['errorCodes'])){
+            return [];
         }
         throw new Exception($data['errors'][0]);
     }
