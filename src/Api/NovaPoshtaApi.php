@@ -49,7 +49,7 @@ trait NovaPoshtaApi
         if ($data['success']) {
             return $data;
         }elseif (in_array(20000900746, $data['errorCodes'])){
-            return [];
+            return $data;
         }
         throw new Exception($data['errors'][0]);
     }
