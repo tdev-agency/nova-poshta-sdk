@@ -1,8 +1,6 @@
 <?php
 
-
 namespace TDevAgency\NovaPoshtaSdk\Api;
-
 
 use GuzzleHttp\Exception\GuzzleException;
 
@@ -10,11 +8,11 @@ class InternetDocument
 {
     use NovaPoshtaApi;
 
-    const CARGO_TYPE_CARGO = 'Cargo';
-    const CARGO_TYPE_DOCUMENTS = 'Documents';
-    const CARGO_TYPE_TIRES_WHEELS = 'TiresWheels';
-    const CARGO_TYPE_PALLET = 'Pallet';
-    const CARGO_TYPE_MONEY = 'Money';
+    public const CARGO_TYPE_CARGO = 'Cargo';
+    public const CARGO_TYPE_DOCUMENTS = 'Documents';
+    public const CARGO_TYPE_TIRES_WHEELS = 'TiresWheels';
+    public const CARGO_TYPE_PALLET = 'Pallet';
+    public const CARGO_TYPE_MONEY = 'Money';
 
     protected $model = 'InternetDocument';
 
@@ -44,12 +42,11 @@ class InternetDocument
         $cityRecipient,
         $weight,
         $serviceType,
-        $cost = 300,
-        $cargoType = self::CARGO_TYPE_CARGO,
-        $seatsAmount = 1,
-        $optionalParams = [])
-    {
-
+        int $cost = 300,
+        string $cargoType = self::CARGO_TYPE_CARGO,
+        int $seatsAmount = 1,
+        array $optionalParams = []
+    ) {
         $properties = [
             "CitySender" => $citySender,
             "CityRecipient" => $cityRecipient,
@@ -67,6 +64,5 @@ class InternetDocument
         $response = $this->request(['calledMethod' => 'getDocumentPrice', 'methodProperties' => $properties]);
 
         return $response['data'];
-
     }
 }

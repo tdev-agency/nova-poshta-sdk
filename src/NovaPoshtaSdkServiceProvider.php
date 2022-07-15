@@ -13,7 +13,6 @@ use TDevAgency\NovaPoshtaSdk\Facades\NovaPoshta;
 
 class NovaPoshtaSdkServiceProvider extends ServiceProvider
 {
-
     /**
      * Register services.
      *
@@ -38,9 +37,6 @@ class NovaPoshtaSdkServiceProvider extends ServiceProvider
             });
         }
 
-
         $this->mergeConfigFrom(__DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'config.php', 'nova_poshta');
     }
-
-
 }

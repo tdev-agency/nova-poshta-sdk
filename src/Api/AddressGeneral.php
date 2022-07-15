@@ -1,8 +1,6 @@
 <?php
 
-
 namespace TDevAgency\NovaPoshtaSdk\Api;
-
 
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Support\Collection;
@@ -11,8 +9,8 @@ class AddressGeneral
 {
     use NovaPoshtaApi;
 
-    const CATEGORY_BRANCH = 'Branch';
-    const CATEGORY_POSTOMAT = 'Postomat';
+    public const CATEGORY_BRANCH = 'Branch';
+    public const CATEGORY_POSTOMAT = 'Postomat';
     protected $model = 'AddressGeneral';
 
     /**
@@ -31,7 +29,7 @@ class AddressGeneral
      *
      * @throws GuzzleException
      */
-    public function getWarehouses(array $props = [], $category = null)
+    public function getWarehouses(array $props = [], $category = null): Collection
     {
         $response = $this->request(['calledMethod' => 'getWarehouses', 'methodProperties' => $props]);
         $warehouses = $response['data'];

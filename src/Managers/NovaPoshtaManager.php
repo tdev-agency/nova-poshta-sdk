@@ -1,8 +1,6 @@
 <?php
 
-
 namespace TDevAgency\NovaPoshtaSdk\Managers;
-
 
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\App;
@@ -50,7 +48,6 @@ class NovaPoshtaManager
             'decode_content' => true,
             'verify' => false
         ]);
-
     }
 
     private function getApiKey()
@@ -59,7 +56,6 @@ class NovaPoshtaManager
             return $this->key;
         }
         return Config::get('nova_poshta.api_key');
-
     }
 
     /**
@@ -93,5 +89,4 @@ class NovaPoshtaManager
     {
         return $this->singleton('NovaPoshtaSdk/Counterparty');
     }
-
 }

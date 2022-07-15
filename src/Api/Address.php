@@ -1,8 +1,6 @@
 <?php
 
-
 namespace TDevAgency\NovaPoshtaSdk\Api;
-
 
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Support\Collection;
@@ -22,7 +20,7 @@ class Address
      * @return Collection
      * @throws GuzzleException
      */
-    public function getCities($methodProperties = [])
+    public function getCities(array $methodProperties = []): Collection
     {
         $request = ['calledMethod' => 'getCities'];
         if (!empty($methodProperties)) {
@@ -37,7 +35,7 @@ class Address
      * @return Collection
      * @throws GuzzleException
      */
-    public function getAreas()
+    public function getAreas(): Collection
     {
         $cities = $this->request(['calledMethod' => 'getAreas']);
         return Collection::make($cities['data']);
@@ -50,7 +48,7 @@ class Address
      * @return Collection
      * @throws GuzzleException
      */
-    public function searchSettlements(string $query, bool $withWarehouses = true, int $limit = 5)
+    public function searchSettlements(string $query, bool $withWarehouses = true, int $limit = 5): Collection
     {
         $response = $this->request([
             'calledMethod' => 'searchSettlements',

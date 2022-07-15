@@ -22,7 +22,6 @@ use TDevAgency\NovaPoshtaSdk\Managers\NovaPoshtaManager;
  */
 class NovaPoshta extends Facade
 {
-
     /**
      * Get the registered name of the component.
      *
@@ -32,5 +31,4 @@ class NovaPoshta extends Facade
     {
         return NovaPoshtaManager::class;
     }
-
 }

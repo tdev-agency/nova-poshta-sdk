@@ -1,12 +1,9 @@
 <?php
 
-
 namespace TDevAgency\NovaPoshtaSdk\Api;
-
 
 class Counterparty
 {
-
     use NovaPoshtaApi;
 
     protected $model = 'Counterparty';
@@ -14,9 +11,7 @@ class Counterparty
     public function getCounterpartyAddresses()
     {
         $res = $this->request(['calledMethod' => 'getCounterpartyAddresses']);
-        xdebug_break();
         return $res;
-
     }
 
     public function getCounterparties()
@@ -25,9 +20,7 @@ class Counterparty
                 [
                     'CounterpartyProperty' => 'Sender',
                     'FindByString' => '80953266786']
-            ]
-        );
-        xdebug_break();
+            ]);
         return $res;
     }
 }

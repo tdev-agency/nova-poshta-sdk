@@ -1,8 +1,6 @@
 <?php
 
-
 namespace TDevAgency\NovaPoshtaSdk\Api;
-
 
 use Exception;
 use GuzzleHttp\Client;
@@ -11,7 +9,6 @@ use RuntimeException;
 
 trait NovaPoshtaApi
 {
-
     /**
      * @var Client
      */
@@ -36,7 +33,7 @@ trait NovaPoshtaApi
      * @throws GuzzleException
      * @throws Exception
      */
-    protected function request($options, $method = 'POST', $uri = '')
+    protected function request($options, string $method = 'POST', string $uri = '')
     {
         $request = $this->httpClient->request($method, $uri, [
             'json' => array_merge([
@@ -48,9 +45,9 @@ trait NovaPoshtaApi
         $data = json_decode($request->getBody()->getContents(), true);
         if ($data['success']) {
             return $data;
-        }elseif (in_array(20000900746, $data['errorCodes'])){
+        } elseif (in_array(20000900746, $data['errorCodes'])) {
             return $data;
         }
-        throw new Exception($data['errors'][0]);
+        throw new RuntimeException($data['errors'][0]);
     }
 }
