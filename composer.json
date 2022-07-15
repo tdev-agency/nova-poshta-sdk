@@ -3,7 +3,7 @@
   "description": "Laravel package for Nova Poshta API v 2.0 (json only)",
   "type": "library",
   "license": "MIT",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "authors": [
     {
       "name": "TDev Agency",
